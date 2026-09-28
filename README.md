@@ -1,17 +1,68 @@
-# inclass5
+# Activity 05 Counter App
 
-A new Flutter project.
+A Flutter counter application created for CSC 4360 Mobile App Development – In-Class Activity 05.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Counter range from 10 to 150
+- Starts at 40
+- Increase and decrease buttons
+- Custom positive whole-number increment
+- Reset counter to 10
+- Undo previous counter changes
+- Slider for changing the counter
+- History tracking for valid counter changes
+- Prevents values below 10 or above 150
+- SnackBar feedback for invalid actions and inputs
+- Invalid increment input keeps the previous valid increment
+- Counter changes color based on its value:
+  - Red at 10
+  - Green above 90
+  - Black otherwise
 
-A few resources to get you started if this is your first Flutter project:
+## State Management
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+The app uses a `StatefulWidget` to manage:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Current counter value
+- Current increment
+- Counter history
+- Slider changes
+
+`setState()` is used whenever a valid action changes what is displayed on the screen.
+
+## Validation
+
+The app rejects:
+
+- Empty increment input
+- Decimal increments
+- Negative increments
+- Non-numeric increments
+- Counter values below 10
+- Counter values above 150
+
+Rejected counter actions do not change the counter or add an entry to history.
+
+## Testing
+
+The app was tested for:
+
+1. Lower boundary
+2. Upper boundary
+3. Overshooting the allowed range
+4. Invalid increment input
+5. Multiple undo operations
+6. Slider and undo consistency
+
+The release APK was also tested on a physical Android device.
+
+## Built With
+
+- Flutter
+- Dart
+
+## Author
+
+Eyobed Gebregziabher
+CSC 4360 – Mobile App Development
